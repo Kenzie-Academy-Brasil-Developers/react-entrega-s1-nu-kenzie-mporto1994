@@ -1,0 +1,16 @@
+.list {
+    width: 560px;
+    font-size: 16px;
+    font-weight:700 ;
+    font-family: 'Nunito', sans-serif;
+    
+}
+.list button {
+    padding:10.5px 15px;
+    border-radius: 8px;
+    border: 0ch;
+    background-color: #E9ECEF;
+    color:#868E96;
+}
+    
+
