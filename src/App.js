@@ -11,16 +11,25 @@ function App() {
   { description: "Conta de luz", type: "saída", value: -150 }
 ])
 
+const saveTransaction = (input) =>{
+  // const newTrans = {description:desc,type:type,value:value}
+  console.log(listTransactions)
+  typeof input.value != 	"number"? input.value = parseInt(input.value):input.value=input.value
+  setListTransactions([...listTransactions,input])
+  console.log(listTransactions)
+  
+}
+
   return (
-    <div>
+    <div className='main'>
 
       <Header/>
       <div className="Container">
         <div className='leftColumn'>
-          <Form/>
-          <TotalMoney/>
+          <Form transactions = {listTransactions} setTransections = {setListTransactions} saveTransaction={saveTransaction}/>
+          <TotalMoney transactions = {listTransactions}/>
         </div>
-        <List transactions={listTransactions}/>
+        <List transactions = {listTransactions}/>
       </div>
     </div>
   );

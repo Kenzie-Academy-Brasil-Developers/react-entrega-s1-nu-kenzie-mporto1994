@@ -1,22 +1,38 @@
 import "./styles.css"
 import {useState} from "react"
 
-export const Form = () => {
+export const Form = ({transactions, setTransactions,saveTransaction}) => {
+    const [input,setInput]  = useState({description:"",type:"entrada",value:0})
+
+
 
     return(
-        <form>
-            <label>Descrição<input placeholder="Digite sua descrição"/><p>Ex:Compra de roupas</p></label>
+        <form onSubmit={(event)=>event.preventDefault()}>
+            <label>Descrição
+                <input 
+                    placeholder="Digite sua descrição" 
+                    value={input.description} 
+                    onChange={((event)=>setInput({...input,"description":event.target.value}))}/>
+                <p>Ex:Compra de roupas</p>
+            </label>
             <div>
-                <label>Valor<input placeholder="  1                       R$"/></label>
+                <label>Valor 
+                    <input 
+                        type="number" 
+                        placeholder="  1                       R$" 
+                        value={input.value} 
+                        onChange={((event)=>setInput({...input,"value":event.target.value}))}/>
+                    </label>
                 <label>Tipo de valor
-                    <select>
-                        <option value="income" selected>Entrada</option>
-                        <option value="expenses">Saída</option>
+                    <select value={input.type} 
+                            onChange={((event)=>setInput({...input,"type":event.target.value}))}>
+                        <option value="Entrada" defaultValue>Entrada</option>
+                        <option value="Saída">Saída</option>
                     </select>
                 </label>
             </div>
+            <div className="button"><button onClick={(()=>saveTransaction(input))}>Inserir Valor</button></div>
             
-            <button>Inserir Valor</button>
         </form>
     )
 }

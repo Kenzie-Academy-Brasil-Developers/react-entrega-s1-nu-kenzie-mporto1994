@@ -14,8 +14,8 @@ export const List = ({transactions}) => {
                     <button>Saidas</button>
                 </div>
             </header>
-            {transactions.map((transaction)=>(
-                <Card transaction={transaction}/>
+            {transactions.map((transaction, index)=>(
+                <Card transaction={transaction} key={index}/>
             ))}
         </div>
     )
