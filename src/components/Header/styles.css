@@ -17,12 +17,6 @@
 
 
 }
-.cabeçalho h1 {
-    color: #fd377e;
-}
-.cabeçalho span {
-    color:#212529;
-}
 .cabeçalho button {
     color:#868E96;
     height:40px;
@@ -30,4 +24,8 @@
     background-color: #E9ECEF;
     border: 0ch;
     border-radius: 8px;
+    cursor: pointer;
+}
+button :hover{
+    cursor: pointer;
 }

@@ -1,12 +1,13 @@
 import "./styles.css"
 import {useState} from "react"
+import { Logo } from "../Logo"
 
-export const Header = () => {
+export const Header = ({page}) => {
 
     return(
         <header className="cabeçalho">
             <div className="content">
-              <h1>Nu<span>Kenzie</span></h1>
+            <Logo page={page}/>  
             <button>Inicio</button>  
             </div>
             

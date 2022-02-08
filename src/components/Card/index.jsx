@@ -2,7 +2,8 @@ import "./styles.css"
 import {useState} from "react"
 import {FaTrash} from "react-icons/fa"
 
-export const Card = ({transaction}) => {
+export const Card = ({transaction, remove, prop}) => {
+    // console.log(prop)
     return(
         <div className="Card">
             <div className="left">
@@ -11,7 +12,7 @@ export const Card = ({transaction}) => {
             </div>
             <div className="right">
                 <p><span>R$</span>{transaction.value<0 ?transaction.value*-1:transaction.value}</p>
-                <button><FaTrash/></button>
+                <button onClick={()=>remove(prop)}><FaTrash/></button>
                 
             </div>
         </div>
